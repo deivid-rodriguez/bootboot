@@ -254,8 +254,6 @@ class BootbootTest < Minitest::Test
   end
 
   def test_bundle_install_with_different_ruby_for_installing_gemfile_next_lock_fails
-    skip("broken with a newer version of bundler")
-
     write_gemfile do |file, _dir|
       FileUtils.cp("#{file.path}.lock", gemfile_next(file))
       File.write(file, <<-EOM, mode: "a")
